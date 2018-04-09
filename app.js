@@ -12,7 +12,7 @@ const port = 3000;
 
 // Route Files
 const index = require('./routes/index');
-const users = require('./routes/users');
+//const users = require('./routes/register');
 
 // Init App
 const app = express();
@@ -58,7 +58,7 @@ app.use(expressValidator({
 }));
 
 app.use('/', index);
-app.use('/users', users);
+//app.use('/register', users);
 
 app.listen(port, function(){
     console.log('Server started on port '+port);
