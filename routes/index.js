@@ -1,5 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
 
@@ -57,5 +59,35 @@ router.post('/register', function (req, res, next) {
     }
 });
 
+// Local Strategy
+
+passport.use(new LocalStrategy(function (username, password, done) {
+    User.getUserByUsername(username, function (err, user) {
+        if(err) throw err;
+        if(!user){
+            return done(null, false, {message: 'No user found'});
+        }
+
+        User.comparePassword(passport, user.password, function (err, isMatch) {
+            if(err) throw err;
+            if(isMatch){
+                return done(null, user);
+            } else{
+                return done(null, false, {message: 'Wrong Password'});
+            }
+        });
+    });
+}));
+
+// Login Post Request Processing
+router.post('/login', function (req, res, next) {
+   passport.authenticate('local', {
+       successRedirect: '/',
+       failureRedirect: '/login',
+       failureFlash: true
+   }, function (req, res) {
+       res.redirect('/');
+   });
+});
 
 module.exports = router;
