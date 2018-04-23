@@ -20,6 +20,11 @@ router.get('/login', function (req, res, next) {
     res.render('login');
 });
 
+// logout
+router.get('/logout', function (req, res, next) {
+    req.logout();
+});
+
 // Register process
 
 router.post('/register', function (req, res, next) {
