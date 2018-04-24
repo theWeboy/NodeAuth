@@ -41,9 +41,10 @@ router.post('/register', function (req, res, next) {
     req.checkBody('password', 'Password field is required').notEmpty();
     req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
-    var errors = req.validationErrors();
+    let errors = req.validationErrors();
 
     if(errors){
+        console.log(errors);
         res.render('register', {
             errors: errors
         });
@@ -72,7 +73,7 @@ passport.use(new LocalStrategy(function (username, password, done) {
             return done(null, false, {message: 'No user found'});
         }
 
-        User.comparePassword(passport, user.password, function (err, isMatch) {
+        User.comparePassword(password, user.password, function (err, isMatch) {
             if(err) throw err;
             if(isMatch){
                 return done(null, user);
@@ -99,7 +100,7 @@ router.post('/login', function (req, res, next) {
        successRedirect: '/',
        failureRedirect: '/login',
        failureFlash: true
-   })(req,res, next);
+   })(req, res, next);
 });
 
 module.exports = router;
