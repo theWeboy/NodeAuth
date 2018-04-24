@@ -6,7 +6,7 @@ const LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
 
 // Home Page
-router.get('/', function(req, res, next){
+router.get('/', ensureAuthenticated, function(req, res, next){
     res.render('index');
 });
 
@@ -20,9 +20,11 @@ router.get('/login', function (req, res, next) {
     res.render('login');
 });
 
-// logout
+//Logout route
 router.get('/logout', function (req, res, next) {
     req.logout();
+    req.flash('success_msg', 'You are logged out');
+    res.redirect('/login');
 });
 
 // Register process
@@ -102,5 +104,16 @@ router.post('/login', function (req, res, next) {
        failureFlash: true
    })(req, res, next);
 });
+
+//Access Control (secure routing)
+function ensureAuthenticated(req, res, next) {
+    if(req.isAuthenticated()){
+        return next();
+    }
+    else{
+        req.flash('error_msg', 'You are not authorised to view that page');
+        res.redirect('/login');
+    }
+}
 
 module.exports = router;
