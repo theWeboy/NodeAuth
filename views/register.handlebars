@@ -1,25 +1,55 @@
-<form method="post" action="/register">
-    <div class="form-group label-floating">
-        <label for="name" class="control-label">Name</label>
-        <input type="text" class="form-control" name="name">
+<style>
+    body{
+        background-image:    url(https://previews.123rf.com/images/stockerteam/stockerteam1610/stockerteam161000040/64577822-it-business-icons-pattern-on-white-background-Stock-Photo.jpg);
+    		background-size: cover;
+    		background-repeat:   repeat;
+    		background-position: center center;
+    }
+</style>
+<div class="container" style="height: 100%; width: 100%; margin-bottom: 30px">
+    <div class="row" style="height: 100%; width: 100%; display: flex">
+        <div class="col-md-5" style="margin: auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <h2 class="text-center">Register</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding: 0 25px 0 25px">
+
+                            <form method="post" action="/register">
+                                <div class="form-group label-floating">
+                                    <label for="name" class="control-label">Name</label>
+                                    <input type="text" class="form-control" name="name">
+                                </div>
+                                <div class="form-group label-floating">
+                                    <label for="username" class="control-label">Username</label>
+                                    <input type="text" class="form-control" name="username">
+                                </div>
+                                <div class="form-group label-floating">
+                                    <label for="email" class="control-label">Email</label>
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                                <div class="form-group label-floating">
+                                    <label for="password" class="control-label">Password</label>
+                                    <input type="password" class="form-control" name="password">
+                                </div>
+                                <div class="form-group label-floating">
+                                    <label for="password2" class="control-label">Confirm Password</label>
+                                    <input type="password" class="form-control" name="password2">
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-primary btn-lg" type="submit">Register</button>
+                                    <br><br>
+                                    Already Have An Account? <a href="/login">Login Now</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group label-floating">
-        <label for="username" class="control-label">Username</label>
-        <input type="text" class="form-control" name="username">
-    </div>
-    <div class="form-group label-floating">
-        <label for="email" class="control-label">Email</label>
-        <input type="email" class="form-control" name="email">
-    </div>
-    <div class="form-group label-floating">
-        <label for="password" class="control-label">Password</label>
-        <input type="password" class="form-control" name="password">
-    </div>
-    <div class="form-group label-floating">
-        <label for="password2" class="control-label">Confirm Password</label>
-        <input type="password" class="form-control" name="password2">
-    </div>
-    <button class="btn btn-primary btn-lg" type="submit">Register</button>
-    <br>
-    Have An Account? <a href="/login">Login Now</a>
-</form>
+</div>
+
+

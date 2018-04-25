@@ -2,6 +2,9 @@ body {
   background: #E6E6E5;
 }
 
+.alert.alert-danger{
+  background-color: #e27169;!important;
+}
 .navbar .navbar-brand{
   padding-left: 50px;
   opacity: 0.5;
@@ -29,4 +32,57 @@ a:hover{
 .mainbtn{
   border-radius: 25px;
   width: 100%;
+}
+.btn-simple{
+  margin-top: 0;
+}
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+}
+.footer-black{
+  background-color: #1a1a1a;
+  color: white;
+}
+.footer-transparent{
+  background-color: transparent;
+  color: white;
+  opacity: 0.8;
+}
+.footer-cont{
+  padding-top: 20px;
+}
+.social{
+  background-color: transparent;
+  box-shadow: none;
+
+}
+.social-fb:hover{
+  background-color: transparent;
+  transition: 0.4s;
+  color: #3B5998;
+  box-shadow: none;
+
+}
+.social-gh:hover{
+  background-color: transparent;
+  transition: 0.4s;
+  box-shadow: none;
+  color: black;
+}
+.social-li:hover{
+  background-color: transparent;
+  transition: 0.4s;
+  box-shadow: none;
+  color: #4875B4;
+}
+.social-tw:hover{
+  background-color: transparent;
+  transition: 0.4s;
+  color: #4099FF;
+  box-shadow: none;
+
 }

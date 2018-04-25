@@ -7,22 +7,22 @@ var User = require('../models/user');
 
 // Home Page
 router.get('/', function(req, res, next){
-    res.render('index', {class : "navbar-transparent"});
+    res.render('index', {class : "navbar-transparent", footerclass : "footer-transparent footer-fixed"});
 });
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, function (req, res, next) {
-    res.render('dashboard', {class : "navbar-default"});
+    res.render('dashboard', {class : "navbar-default", footerclass : "footer-black footer-fixed"});
 });
 
 //Register Page
 router.get('/register', function (req, res, next) {
-    res.render('register', {class : "navbar-default"});
+    res.render('register', {class : "navbar-default", footerclass : "footer-black"});
 });
 
 //Login Page
 router.get('/login', function (req, res, next) {
-    res.render('login', {class : "navbar-default"});
+    res.render('login', {class : "navbar-default", footerclass : "footer-black footer-fixed"});
 });
 
 //Logout route
@@ -53,7 +53,9 @@ router.post('/register', function (req, res, next) {
     if(errors){
         console.log(errors);
         res.render('register', {
-            errors: errors
+            errors: errors,
+            class : "navbar-default",
+            footerclass : "footer-black"
         });
     }
     else {
