@@ -1,0 +1,24 @@
+body {
+  background: #E6E6E5;
+  padding-top: 70px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.jumbotron{
+  background:url("../images/bg-jumbotron.jpg") no-repeat;
+  background-size: cover;
+}
+
+footer{
+  background: #8c8c8c;
+  height: 40px;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+.contact-cont{
+  margin-top: 50px;
+  margin-bottom: 55px;
+}

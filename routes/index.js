@@ -6,8 +6,13 @@ const LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
 
 // Home Page
-router.get('/', ensureAuthenticated, function(req, res, next){
+router.get('/', function(req, res, next){
     res.render('index');
+});
+
+// Dashboard
+router.get('/dashboard', ensureAuthenticated, function (req, res, next) {
+    res.render('dashboard');
 });
 
 //Register Page
@@ -99,7 +104,7 @@ passport.deserializeUser(function(id, done) {
 // Login Post Request Processing
 router.post('/login', function (req, res, next) {
    passport.authenticate('local', {
-       successRedirect: '/',
+       successRedirect: '/dashboard',
        failureRedirect: '/login',
        failureFlash: true
    })(req, res, next);

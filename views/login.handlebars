@@ -1,13 +1,13 @@
 <form method="post" action="/login">
-    <div>
-        <label>Username</label>
-        <input type="text" name="username" placeholder="Username">
+    <div class="form-group label-floating">
+        <label for="username" class="control-label">Username</label>
+        <input type="text" class="form-control" name="username">
     </div>
-    <div>
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Password">
+    <div class="form-group label-floating">
+        <label for="password" class="control-label">Password</label>
+        <input type="password" class="form-control" name="password">
     </div>
-    <button type="submit">Login</button>
+    <button class="btn btn-primary btn-lg" type="submit">Login</button>
     <br>
     Don't Have An Account? <a href="/register">Register</a>
 </form>
